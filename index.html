@@ -8,17 +8,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Add your ad</h1>
+  <div class="main">
+    <h1>Defraud Dutch<br>Design Week</h1>
 
-  <div id="message"></div>
+    <div class="instructions">
+      <p>Find a product</p>
+      <p>Take a photo</p>
+      <p>Choose a price</p>
+      <p>Sell it on our vending machine</p>
+    </div>
 
-  <form method="POST" enctype="multipart/form-data" action="">
-    Title: <input type="text" name="title" id="title" value="" placeholder="Title">
-    &euro; <input type="number" name="price" id="price" value="" placeholder="Price">
-    <input type="file" id="pictures" name="pictures" accept="image/*"/>
-  </form>
+    <form method="POST" enctype="multipart/form-data" action="">
+      <div class="input">
+        <input type="file" id="pictures" name="pictures" accept="image/*"/>
+      </div>
 
-  <a href="#" onclick="upload()" class="button--submit">DO IT</a>
+      <div class="input">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="" placeholder="Title">
+      </div>
+
+      <div class="input-icon">
+        <label for="price">Asking price</label>
+        <input type="number" name="price" id="price" value="" placeholder="0.00">
+        <i>&euro;</i>
+      </div>
+    </form>
+
+    <a href="#" onclick="upload()" class="button">Publish advert</a>
+
+    <div id="message"></div>
+  </div>
 
   <script src="main.js"></script>
 </body>

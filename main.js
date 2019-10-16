@@ -8,6 +8,8 @@ async function upload () {
   const pictures = document.getElementById('pictures').files[0]
   const formData = new FormData()
 
+  message.innerHTML = 'Uploading… Hold on'
+
   formData.append('pictures', pictures)
 
   const response = await fetch('https://assets.e-rob.nl', {method: 'POST', body: formData})
@@ -25,5 +27,5 @@ async function upload () {
     .then(res => res.json())
     .then(entry => console.log(entry))
 
-  message.innerHTML = 'Image uploaded!!!!!!!!!'
+  message.innerHTML = 'Your advert was published!'
 }
