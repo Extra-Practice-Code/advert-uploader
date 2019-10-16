@@ -9,7 +9,8 @@ const app = new Vue({
     productTitle: null,
     productPrice: null,
     uploadingPhoto: false,
-    publishing: false
+    publishing: false,
+    editingDetails: false
   },
   methods: {
     nextStep: function () {
@@ -58,6 +59,12 @@ const app = new Vue({
         .then(entry => console.log(entry))
 
       this.step = 5
+    },
+    focusInput: function () {
+      this.editingDetails = true
+    },
+    blurInput: function () {
+      this.editingDetails = false
     }
   }
 })

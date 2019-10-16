@@ -52,17 +52,17 @@
 
       <div class="input">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="" placeholder="Title" v-model="productTitle">
+        <input type="text" name="title" id="title" value="" placeholder="Title" v-model="productTitle" v-on:focus="focusInput" v-on:blur="blurInput">
       </div>
 
       <div class="input-icon">
         <label for="price">Asking price</label>
-        <input type="text" name="price" id="price" value="" placeholder="0.00" v-model="productPrice">
+        <input type="text" name="price" id="price" value="" placeholder="0.00" v-model="productPrice" v-on:focus="focusInput" v-on:blur="blurInput">
         <i>&euro;</i>
       </div>
 
       <div class="actions">
-        <a href="#" class="button" v-on:click="nextStep">Preview advert</a>
+        <a href="#" class="button" v-on:click="nextStep" v-if="!editingDetails">Preview advert</a>
       </div>
     </div>
 
