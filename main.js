@@ -19,7 +19,7 @@ const app = new Vue({
       this.photoSelected = true
     },
     uploadPhoto: async function () {
-      if (!this.uploadingPhoto && this.mainPicture) {
+      if (!this.uploadingPhoto) {
         const pictures = document.getElementById('pictures').files[0]
         const formData = new FormData()
 
