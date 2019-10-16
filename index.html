@@ -4,42 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Add your ad</title>
+  <title>E-ROB</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="main" id="app">
-    <h1>Defraud Dutch<br>Design Week</h1>
+    <div v-if="step === 0">
+      <h1>Defraud Dutch<br>Design Week</h1>
 
-    <div class="instructions">
-      <p>Find a product</p>
-      <p>Take a photo</p>
-      <p>Choose a price</p>
-      <p>Sell it on our vending machine</p>
+      <div class="instructions">
+        <p>Find a product</p>
+        <p>Take a photo</p>
+        <p>Choose a price</p>
+        <p>Sell it on our vending machine</p>
+      </div>
+
+      <div class="actions">
+        <a href="#" class="button" v-on:click="nextStep">Get started</a>
+      </div>
     </div>
 
-    <form method="POST" enctype="multipart/form-data" action="">
+    <div v-if="step === 1">
+      <h1>Take a photo of the product you want to sell</h1>
+
       <div class="input">
-        <input type="file" id="pictures" name="pictures" accept="image/*"/>
+        <input type="file" id="pictures" name="pictures" accept="image/*" v-model="mainPicture">
       </div>
+
+      <div class="actions">
+        <a href="#" class="button" v-if="mainPicture" v-on:click="uploadPhoto">{{ uploadingPhoto ? 'Uploading… One moment…' : 'Next' }}</a>
+      </div>
+    </div>
+
+    <div v-if="step === 2">
+      <div class="photo" v-bind:style="`background: url('https://assets.e-rob.nl/` + mainPictureURL + `') center / cover`"></div>
+
+      <div class="actions">
+        <div class="input">
+          <a href="#" class="back" v-on:click="resetPhoto">Pick a different photo</a>
+        </div>
+        <a class="button" v-on:click="nextStep">Use this photo</a>
+      </div>
+    </div>
+
+    <div v-if="step === 3">
+      <h1>Add extra information</h1>
 
       <div class="input">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="" placeholder="Title">
+        <input type="text" name="title" id="title" value="" placeholder="Title" v-model="productTitle">
       </div>
 
       <div class="input-icon">
         <label for="price">Asking price</label>
-        <input type="text" name="price" id="price" value="" placeholder="0.00">
+        <input type="text" name="price" id="price" value="" placeholder="0.00" v-model="productPrice">
         <i>&euro;</i>
       </div>
-    </form>
 
-    <div class="input">
-      <div id="message" class="message"></div>
+      <div class="actions">
+        <a href="#" class="button" v-on:click="nextStep">Preview advert</a>
+      </div>
     </div>
 
-    <a href="#" onclick="upload()" class="button">Publish advert</a>
+    <div v-if="step === 4">
+      <div class="photo" v-bind:style="`background: url('https://assets.e-rob.nl/` + mainPictureURL + `') center / cover`"></div>
+
+      <h1>{{ productTitle }}</h1>
+      <h2>&euro; {{ productPrice }}</h2>
+
+      <div class="input">
+        <div id="message" class="message"></div>
+      </div>
+
+      <div class="actions">
+        <div class="input">
+          <a href="#" class="back" v-on:click="editDetails" v-if="!publishing">Edit advert</a>
+        </div>
+        <a href="#" class="button" v-on:click="publish">{{ publishing ? 'Publishing… One moment…' : 'Publish advert' }}</a>
+      </div>
+    </div>
+
+    <div v-if="step === 5">
+      <h1>Your advert was published</h1>
+      <div class="actions">
+        <a href="/" class="button">Create another one</a>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
