@@ -48,8 +48,7 @@ label {
   margin: 2rem auto;
 }
 
-input[type=text],
-input[type=number] {
+input[type=text] {
   width: 100%;
   border: 1px solid black;
   font-size: 1rem;
@@ -71,8 +70,6 @@ input[type=number] {
   padding-left: 2.5rem;
 }
 
-
-
 .button {
   cursor: pointer;
   padding: 1rem 2rem;
@@ -82,4 +79,17 @@ input[type=number] {
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
+}
+
+.message {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: #CFCFD1;
+  border: 1px solid #414141;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.message.active {
+  opacity: 1;
 }
