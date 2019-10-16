@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add your ad</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <h1>Add your ad</h1>
+
+  <div id="message"></div>
+
+  <form method="POST" enctype="multipart/form-data" action="">
+    Title: <input type="text" name="title" id="title" value="" placeholder="Title">
+    &euro; <input type="number" name="price" id="price" value="" placeholder="Price">
+    <input type="file" id="pictures" name="pictures" accept="image/*"/>
+  </form>
+
+  <a href="#" onclick="upload()" class="button--submit">DO IT</a>
+
+  <script src="../upload.js"></script>
+</body>
+</html>
