@@ -28,11 +28,11 @@
       <h1>Take a photo of the product you want to sell</h1>
 
       <div class="input">
-        <input type="file" id="pictures" name="pictures" accept="image/*" v-model="mainPicture">
+        <input type="file" id="pictures" name="pictures" accept="image/*" v-on:change="handleFileChange">
       </div>
 
       <div class="actions">
-        <a href="#" class="button" v-on:click="uploadPhoto">{{ uploadingPhoto ? 'Uploading… One moment…' : 'Next' }}</a>
+        <a href="#" class="button" v-if="photoSelected" v-on:click="uploadPhoto">{{ uploadingPhoto ? 'Uploading… One moment…' : 'Next' }}</a>
       </div>
     </div>
 

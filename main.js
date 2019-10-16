@@ -4,7 +4,7 @@ const app = new Vue({
   el: '#app',
   data: {
     step: 0,
-    mainPicture: null,
+    photoSelected: false,
     mainPictureURL: null,
     productTitle: null,
     productPrice: null,
@@ -14,6 +14,9 @@ const app = new Vue({
   methods: {
     nextStep: function () {
       this.step += 1
+    },
+    handleFileChange: function () {
+      this.photoSelected = true
     },
     uploadPhoto: async function () {
       if (!this.uploadingPhoto && this.mainPicture) {
