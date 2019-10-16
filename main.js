@@ -13,18 +13,18 @@ async function upload () {
 
   formData.append('pictures', pictures)
 
-  // const response = await fetch('https://assets.e-rob.nl', {method: 'POST', body: formData})
-  // const url = await response.text()
+  const response = await fetch('https://assets.e-rob.nl', {method: 'POST', body: formData})
+  const url = await response.text()
 
-  // fetch('https://marketplace.e-rob.nl/api/collections/save/uploads?token=account-311b5b245eceac5ab10804a2c0417d', {
-  //   method: 'post',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({
-  //     data: { title, price, image: url }
-  //   })
-  // })
-  //   .then(res => res.json())
-  //   .then(entry => console.log(entry))
+  fetch('https://marketplace.e-rob.nl/api/collections/save/uploads?token=account-311b5b245eceac5ab10804a2c0417d', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      data: { title, price, image: url }
+    })
+  })
+    .then(res => res.json())
+    .then(entry => console.log(entry))
 
   message.innerHTML = 'Your advert was published!'
 }
