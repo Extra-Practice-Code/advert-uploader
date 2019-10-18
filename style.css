@@ -28,22 +28,49 @@ body {
   width: 95%;
   max-width: 30rem;
   margin: 0 auto;
+  text-align: center;
+}
+
+.main p {
+  margin: 0;
 }
 
 .instructions {
+  margin-top: 50px;
   text-align: center;
   text-transform: uppercase;
   padding: 2rem 0;
 }
 
 .instructions p {
-  color: red;
-  margin: 2rem 0;
+  margin: 10px 0px;
+  padding: 12px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  height: 3rem;
+}
+
+.instructions p#one {
+  background-color: #0164FF;
+}
+
+.instructions p#two {
+  background-color: #FFEC00;
+}
+
+.instructions p#three {
+  background-color: #FE3500;
+}
+
+.instructions p#four {
+  background-color: #7CDDD9;
 }
 
 h1 {
   font-weight: normal;
   text-transform: uppercase;
+  margin: 10px 0px 0px 0px;
+  line-height: 2.2rem;
 }
 
 label {
@@ -93,13 +120,18 @@ input[type=text] {
 .button {
   cursor: pointer;
   padding: 1rem 2rem;
-  background: red;
+  background: #fff;
   color: black;
   border: 1px solid black;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0);
 }
 
 .photo {
@@ -126,4 +158,30 @@ input[type=text] {
 
 .message.active {
   opacity: 1;
+}
+
+
+/* INFO PAGE */
+#information {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.info-bubble {
+  border-radius: 10px;
+  border: 1px solid #000;
+  padding: 10px;
+  margin: 5px 0px;
+}
+
+#pOne {
+  background-color: #FE3500;
+}
+
+#pTwo {
+  background-color: #FFEC00;
+}
+
+#pThree {
+  background-color: #0164FF;
 }
