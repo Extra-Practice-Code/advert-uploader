@@ -212,6 +212,11 @@ input[type=text] {
 
 #main-computer h1 {
   text-transform: none;
-  font-size: 60px;
-  line-height: 4rem;
+  font-size: 90px;
+  line-height: 6rem;
+}
+
+#main-computer h3 {
+  font-size: 30px;
+  font-weight: normal;
 }
