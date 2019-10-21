@@ -194,8 +194,9 @@ input[type=text] {
 
 #header {
   width: 100%;
-  margin: 0px auto;
+  margin: 0px auto 70px auto;
   text-align: center;
+  padding-top: 100px;
 }
 
 #header img {
@@ -206,4 +207,11 @@ input[type=text] {
   width: 90%
   margin: 0px auto;
   text-align: center;
+  text-transform: none;
+}
+
+#main-computer h1 {
+  text-transform: none;
+  font-size: 60px;
+  line-height: 4rem;
 }
