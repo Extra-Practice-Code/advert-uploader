@@ -45,25 +45,24 @@ body {
 .instructions p {
   margin: 10px 0px;
   padding: 12px;
-  border: 1px solid #000;
   border-radius: 10px;
   height: 3rem;
 }
 
 .instructions p#one {
-  background-color: #0164FF;
+  border: 2px solid #0164FF;
 }
 
 .instructions p#two {
-  background-color: #FFEC00;
+  border: 2px solid #FFEC00;
 }
 
 .instructions p#three {
-  background-color: #FE3500;
+  border: 2px solid #FE3500;
 }
 
 .instructions p#four {
-  background-color: #7CDDD9;
+  border: 2px solid #7CDDD9;
 }
 
 h1 {
@@ -184,4 +183,27 @@ input[type=text] {
 
 #pThree {
   background-color: #0164FF;
+}
+
+/* Question Place */
+
+#container-computer {
+  background-color: rgb(72, 236, 226);
+  height: 100%;
+}
+
+#header {
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#header img {
+  height: 10rem;
+}
+
+#main-computer {
+  width: 90%
+  margin: 0px auto;
+  text-align: center;
 }
